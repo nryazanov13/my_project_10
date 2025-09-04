@@ -36,6 +36,7 @@ public class StepsTests extends TestBase {
 
     @Test
     public void testAnnotatedStepSearch(){
+
         WebSteps step = new WebSteps();
 
         step.openMainPage();
