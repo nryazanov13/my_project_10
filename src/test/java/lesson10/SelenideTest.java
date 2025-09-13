@@ -1,8 +1,6 @@
 package lesson10;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
@@ -10,22 +8,18 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 
-public class SelenideTest {
+public class SelenideTest extends BaseTest{
 
     @Test
-    public void testIssueSearch(){
-        SelenideLogger.addListener("allure", new AllureSelenide());
+    public void testIssueSearch() {
 
-        open("https://github.com");
-
+        open("");
         $(".header-search-button").click();
-        $("#query-builder-test").sendKeys("eroshenkoam/allure-example");
+        $("#query-builder-test").sendKeys(REPOSITORY);
         $("#query-builder-test").submit();
 
-        $(linkText("eroshenkoam/allure-example")).click();
+        $(linkText(REPOSITORY)).click();
         $("#issues-tab").click();
-        $(withText("123")).should(Condition.exist);
-
-
+        $(withText("#" + ISSUE)).should(Condition.exist);
     }
 }
