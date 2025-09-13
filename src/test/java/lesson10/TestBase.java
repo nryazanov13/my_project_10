@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-public class BaseTest {
+public class TestBase {
 
     public static final String REPOSITORY = "nryazanov13/my_project_10";
     public static final int ISSUE = 1;
