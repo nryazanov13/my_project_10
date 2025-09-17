@@ -28,7 +28,6 @@ public class TestBase {
 
     @AfterEach
     public void tearDown() {
-        SelenideLogger.removeListener("allure");
         Selenide.closeWebDriver();
     }
 }
